@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Event Management</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 id="auth-title">Register / Login</h1>
+        <div id="auth-section">
+            <form id="auth-form" class="form">
+                <input type="email" id="username" placeholder="Email (must be a Gmail)" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit" class="button" id="auth-submit">Register</button>
+                <button type="button" id="show-login" class="link-button">Already registered? Login</button>
+            </form>
+            <p id="auth-message" class="hidden-section"></p>
+        </div>
+
+        <div id="user-actions" class="hidden-section">
+            <h2>User Actions</h2>
+            <button id="add-event-btn" class="button">Add Sports Event</button>
+            <button id="manage-events-btn" class="button">Manage Sports Events</button>
+        </div>
+
+        <div id="add-event-section" class="hidden-section form-section">
+            <h2>Add Sports Event</h2>
+            <form id="add-event-form" class="form">
+                <input type="text" id="event-name" placeholder="Event Name" required>
+                <select id="game-type">
+                    <option value="Football">Football</option>
+                    <option value="Basketball">Basketball</option>
+                    <option value="Cricket">Cricket</option>
+                    <option value="Tennis">Tennis</option>
+                    <option value="Badminton">Badminton</option>
+                    <option value="Other">Other (Specify)</option>
+                </select>
+                <input type="text" id="specific-game" placeholder="Specify Game" class="hidden-section">
+                <button type="submit" class="button">Add Event</button>
+                <button type="button" id="cancel-add-event" class="link-button">Cancel</button>
+            </form>
+        </div>
+
+        <div id="manage-events-section" class="hidden-section">
+            <h2>Manage Sports Events</h2>
+            <ul id="event-list"></ul>
+            <button id="back-to-user-actions" class="link-button">Back to User Actions</button>
+        </div>
+
+        <div id="admin-login-section" class="hidden-section">
+            <h2>Admin Login</h2>
+            <form id="admin-login" class="form">
+                <input type="text" id="admin-username" placeholder="Admin Username" required>
+                <input type="password" id="admin-password" placeholder="Admin Password" required>
+                <button type="submit" class="button">Login</button>
+            </form>
+        </div>
+
+        <div id="admin-actions" class="hidden-section">
+            <h2>Admin Actions</h2>
+            <button id="add-category-btn" class="button">Add/Update Sports Category</button>
+            <button id="update-city-btn" class="button">Add/Update City</button>
+            <button id="update-area-btn" class="button">Add/Update Area</button>
+            <button id="delete-sport-btn" class="button">Delete Sport</button>
+        </div>
+    </div>
+    
+    <script type="module" src="app.js"></script>
+</body>
+</html>
